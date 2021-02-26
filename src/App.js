@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import TextField from './components/text-field/text-field';
 import './App.css';
 
 function App() {
+
+    function onSubmit(event) {
+        event.preventDefault();
+    }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App">
+          <h1>Calorie Calculator</h1>
+          <form>
+              <TextField
+                name="Fat"
+              />
+              <TextField
+                  name="Carbs"
+              />
+              <TextField
+                  name="Protein"
+              />
+              <button type="submit"
+                onClick={onSubmit}
+              >Calculate</button>
+          </form>
     </div>
   );
 }
