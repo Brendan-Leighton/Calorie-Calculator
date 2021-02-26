@@ -5,9 +5,6 @@ import { useForm } from 'react-hook-form';
 // COMPONENTS
 import TextField from './components/text-field/text-field';
 
-// CSS
-import './App.css';
-
 
 function App() {
 
@@ -28,8 +25,10 @@ function App() {
     }
 
     return (
-        <div className="App">
-            <h1>Calorie Calculator</h1>
+        <>
+            <header>
+                <h1>Calorie Calculator</h1>
+            </header>
             <form
                 onSubmit={handleSubmit(onSubmit)}
             >
@@ -50,14 +49,14 @@ function App() {
             </form>
             <section>
                 <h2>Total Calories: {totalCalories}</h2>
-                <h3>Calories from...</h3>
                 <ul>
+                    <h3>Calories from...</h3>
                     <li>Fat: {fatCalories}</li>
                     <li>Carbs: {carbCalories}</li>
                     <li>Protein: {proteinCalories}</li>
                 </ul>
             </section>
-        </div>
+        </>
     );
 }
 
